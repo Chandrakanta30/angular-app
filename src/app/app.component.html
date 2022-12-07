@@ -1,0 +1,14 @@
+<hello name="{{ name }}"></hello>
+
+<button *ngIf="!showallproduct" (click)="showallproducts()">Show all</button>
+<button *ngIf="showallproduct" (click)="showLessProducts()">Show Less</button>
+
+<div class="row">
+  <ng-container *ngFor="let product of products">
+    <div class="col-md-4">
+      <img src="{{ product.image }}" class="feature-image" />
+      <p>Name: {{ product.name }}</p>
+      <p>{{ product.description }}</p>
+    </div>
+  </ng-container>
+</div>
